@@ -1,19 +1,20 @@
-from cmath import inf
 from helper import getRandomValue, getColors
 from googleapiclient.http import MediaFileUpload
-
 
 class Infos:
     width=1920
     height=1080
     fps=60
+    k= f= dA= dB=0
+    mode= rA= gA= bA= rB= gB= bB=0
     totalFrames=18000
-    k, f, dA, dB= getRandomValue()
-    mode, rA, gA, bA, rB, gB, bB= getColors()
     deltaT=1.0
     pathVideo='../upload_yt/src/video.mp4'
     pathThumb='../upload_yt/src/thumbnail.png'
 
+    def __init__(self):
+        self.k, self.f, self.dA, self.dB= getRandomValue()
+        self.mode, self.rA, self.gA, self.bA, self.rB, self.gB, self.bB= getColors()
 
 class Video:
     file='../upload_yt/src/video.mp4' 

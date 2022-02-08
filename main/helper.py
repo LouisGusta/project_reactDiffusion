@@ -46,6 +46,7 @@ def generateJSON(args):
 
     with open('../simulador/data/params.json', 'w') as outfile:
         outfile.write(json_string)
+    outfile.close()
 
         
 
