@@ -8,6 +8,8 @@ import os, sys, random, time
 sys.path.insert(0, os.path.abspath(os.getcwd()))
 import details
 
+from argparse import ArgumentParser
+
 from apiclient.discovery import build
 from apiclient.errors import HttpError
 from apiclient.http import MediaFileUpload
@@ -84,9 +86,6 @@ def get_authenticated_service(args):
   return build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
     http=credentials.authorize(httplib2.Http()))
 
-args = details.Video()
-youtube = get_authenticated_service(args)
-
 def initialize_upload(youtube, options):
   tags = None
   if options.keywords:
@@ -122,11 +121,11 @@ def initialize_upload(youtube, options):
     media_body=MediaFileUpload(options.file, chunksize=-1, resumable=True)
   )
 
-  resumable_upload(insert_request)
+  resumable_upload(insert_request, youtube, options)
 
 # This method implements an exponential backoff strategy to resume a
 # failed upload.
-def resumable_upload(insert_request):
+def resumable_upload(insert_request, youtube, options):
   response = None
   error = None
   retry = 0
@@ -161,8 +160,9 @@ def resumable_upload(insert_request):
       print("Sleeping %f seconds and then retrying..." % sleep_seconds)
       time.sleep(sleep_seconds)
 
-
 def uploadVideo():
+  args = details.Video()
+  youtube = get_authenticated_service(args)
   
   if not os.path.exists(args.file):
     exit("Please specify a valid file using the --file= parameter.")

@@ -17,7 +17,7 @@ class Infos:
 
 class Video:
     file='../upload_yt/src/video.mp4' 
-    title= 'usei um codigo maluco e olha só no que deu'#"""k{k} / f{f}""".format(k=Infos.k, f=Infos.f)
+    title= """Reaction Diffusion Simulation | k{k} / f{f}""".format(k=Infos.k, f=Infos.f)
     if Infos.mode == 0:
         description="""
         This is a interactive video created by Project Reaction Diffusion
@@ -38,12 +38,15 @@ class Video:
         k: {k} 
         f: {f} 
         -----------------------------------------------------------------------
-        This study is based on 
+        This study is based on http://karlsims.com/rd.html
         """.format(dA=Infos.dA, dB=Infos.dB,k=Infos.k, f=Infos.f)
-        # http://karlsims.com/rd.html
+        
     keywords=""
     category="28"
     privacyStatus="public"
+    logging_level="DEBUG"
+    noauth_local_webserver=""
+    auth_host_port=""
 
     def defineThumbnail(youtube, videoId):
         thumbnail="../upload_yt/src/thumbnail.png"
