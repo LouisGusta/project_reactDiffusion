@@ -137,7 +137,7 @@ def resumable_upload(insert_request, youtube, options):
         if 'id' in response:
 
           print("Video id '%s' was successfully uploaded." % response['id'])
-          details.Video.defineThumbnail(youtube, response['id'])
+          # details.Video.defineThumbnail(youtube, response['id'])
         else:
           exit("The upload failed with an unexpected response: %s" % response)
     except HttpError as e:

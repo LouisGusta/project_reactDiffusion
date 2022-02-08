@@ -48,14 +48,14 @@ class Video:
     noauth_local_webserver=""
     auth_host_port=""
 
-    def defineThumbnail(youtube, videoId):
-        thumbnail="../upload_yt/src/thumbnail.png"
+    # def defineThumbnail(youtube, videoId):
+    #     thumbnail="../upload_yt/src/thumbnail.png"
 
-        request = youtube.thumbnails().set(
-            videoId = videoId,
-            media_body=MediaFileUpload(thumbnail)
-        )
-        request.execute()
+    #     request = youtube.thumbnails().set(
+    #         videoId = videoId,
+    #         media_body=MediaFileUpload(thumbnail)
+    #     )
+    #     request.execute()
 
 
 
