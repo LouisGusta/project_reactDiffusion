@@ -160,8 +160,8 @@ def resumable_upload(insert_request, youtube, options):
       print("Sleeping %f seconds and then retrying..." % sleep_seconds)
       time.sleep(sleep_seconds)
 
-def uploadVideo():
-  args = details.Video()
+def uploadVideo(params):
+  args = details.Video(params)
   youtube = get_authenticated_service(args)
   
   if not os.path.exists(args.file):
