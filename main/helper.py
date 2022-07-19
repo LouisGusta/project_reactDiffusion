@@ -11,6 +11,7 @@ def generateJSON(args):
                 'width': args.width,
                 'height': args.height,
                 'fps': args.fps,
+                'apf': args.apf,
                 'totalFrames': args.totalFrames,
             },
         ],

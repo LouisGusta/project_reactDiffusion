@@ -4,7 +4,7 @@ float[] A, B, nA, nB;
 PGraphics pg;
 
 float dA, dB, f, k, deltaT;
-int largura, altura, fps, totalFrames;
+int largura, altura, fps, apf, totalFrames;
 String enderecoVideo, enderecoThumb;
 color cA, cB;
 int cont = 0;
@@ -24,6 +24,7 @@ void setup() {
   largura     = screen.getInt("width");
   altura      = screen.getInt("height");
   fps         = screen.getInt("fps");
+  apf         = screen.getInt("apf");
   totalFrames = screen.getInt("totalFrames");
   
   drawing = params.getJSONArray("drawing").getJSONObject(0);
@@ -84,8 +85,9 @@ void setup() {
 
 void draw() {
   
-  atualiza();
-  atualiza();
+  for(int i = 0; i<apf; i++)
+    atualiza();
+  
   desenha();
   cont ++;
   
@@ -95,7 +97,7 @@ void draw() {
   pg.endDraw();
   image(pg, 75, 135, largura*escala, altura*escala);
   
-  if(cont%200 == 0 && !verifica()) {
+  if(cont%25 == 0 && !verifica()) {
     cont = totalFrames;
     pg.beginDraw();
     pg.stroke(0);
