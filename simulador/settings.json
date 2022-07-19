@@ -47,5 +47,5 @@
     "-2",
     "[output]"
   ],
-  "ffmpeg_path": "D:\\Documentos\\Projetos\\python-bot-yt-project-reaction-diffusion\\simulador\\ffmpeg\\bin\\ffmpeg.exe"
+  "ffmpeg_path": "C:\\ffmpeg\\bin\\ffmpeg.exe"
 }

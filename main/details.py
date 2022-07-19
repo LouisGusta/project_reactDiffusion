@@ -7,8 +7,9 @@ class Infos:
     fps=60
     k= f= dA= dB=0
     mode= rA= gA= bA= rB= gB= bB=0
-    totalFrames=18000
-    deltaT=1.0
+    totalFrames=1800
+    apf=30
+    deltaT=0.5
     pathVideo='../upload_yt/src/video.mp4'
     pathThumb='../upload_yt/src/thumbnail.png'
 
@@ -29,25 +30,27 @@ class Video:
         self.title= """Reaction Diffusion Simulation | k{k} / f{f}""".format(k=params.k, f=params.f)
         if params.mode == 0:
             self.description="""
-            This is a interactive video created by Project Reaction Diffusion
-            dA: {dA} 
-            dB: {dB} 
-            k: {k} 
-            f: {f} 
-            Color: ({rA},{gA},{bA}) 
-            Background Color: ({rB},{gB},{bB}) 
-            -----------------------------------------------------------------------
-            This study is based on 
+This is an automatically generated video created by Project Reaction Diffusion
+
+dA: {dA} 
+dB: {dB} 
+k: {k} 
+f: {f} 
+Color: ({rA},{gA},{bA}) 
+Background Color: ({rB},{gB},{bB}) 
+
+This study is based on http://karlsims.com/rd.html
             """.format(dA=params.dA, dB=params.dB,k=params.k, f=params.f, rA=params.rA, gA=params.gA, bA=params.bA, rB=params.rB, gB=params.gB, bB=params.bB)
         else:
             self.description="""
-            This is a interactive video created by Project Reaction Diffusion
-            dA: {dA} 
-            dB: {dB} 
-            k: {k} 
-            f: {f} 
-            -----------------------------------------------------------------------
-            This study is based on http://karlsims.com/rd.html
+This is an automatically generated video created by Project Reaction Diffusion
+
+dA: {dA} 
+dB: {dB} 
+k: {k} 
+f: {f} 
+
+This study is based on http://karlsims.com/rd.html
             """.format(dA=params.dA, dB=params.dB,k=params.k, f=params.f)
         
 

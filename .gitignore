@@ -5,3 +5,4 @@ simulador/java
 __pycache__
 upload_yt/src/
 **/desktop.ini
+upload_yt/upload_video.py-oauth2.json
